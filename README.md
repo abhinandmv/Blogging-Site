@@ -92,7 +92,7 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## 📌Points to remember 
 - [ ] The first login id registered should be of admin here the database already contains : email: admin@gmail.com password:admin@!
-- [ ] The user id can be stored after the registeration of user the database already contains a test user : email: user@gmail.com password:user21
+- [ ] The user id can be stored after the registeration of user the database already contains a test user : email: user@gmail.com password:user123
 - [ ] you can delete the existing database and just run the main.py and store the details again and a new database will be created.
 
 
