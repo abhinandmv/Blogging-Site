@@ -72,12 +72,12 @@ flask run
 Access the app in your browser at `http://127.0.0.1:5000/`
 
 ## 🎨 Screenshots
+![image](https://github.com/user-attachments/assets/66bfc62b-b175-4ebc-8662-c926e2dc8261)
+![image](https://github.com/user-attachments/assets/ffd11ab7-e007-4b92-aac4-a039b3af6010)
+![image](https://github.com/user-attachments/assets/191c0537-058e-432d-a211-6c8e1678cae5)
+![image](https://github.com/user-attachments/assets/1eef5142-a5f6-442f-9e35-8eb1c009d082)
+![image](https://github.com/user-attachments/assets/9e37e150-5653-410c-899e-54fa7c54013d)
 
-![image](https://github.com/user-attachments/assets/f9d5214d-dac4-4f9f-bdf3-0d6a2d70a041)
-![image](https://github.com/user-attachments/assets/41c20dd4-be3d-421e-a2c7-177473eb3b84)
-![image](https://github.com/user-attachments/assets/bf5a62ee-f73c-4691-80cd-8bba4b59402c)
-![image](https://github.com/user-attachments/assets/d0ec262f-1bbe-4617-9dea-b0325b71a2f3)
-![image](https://github.com/user-attachments/assets/af3593cf-c321-4254-81fd-f27dd1384fa3)
 
 
 
