@@ -13,7 +13,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import CreatePostForm,RegisterForm,LoginForm,CommentForm
 from datetime import datetime
 
-
 '''
 Make sure the required packages are installed: 
 Open the Terminal in PyCharm (bottom left). 
@@ -256,8 +255,6 @@ def about():
 def contact():
     current_year = datetime.now().year
     return render_template("contact.html",current_user=current_user,year=current_year)
-
-
 
 
 if __name__ == "__main__":
