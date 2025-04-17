@@ -1,17 +1,18 @@
-{% from "bootstrap5/form.html" import render_form %} {% block content %}
+{% from "bootstrap5/form.html" import render_form %} 
+{% block content %}
 {% include "header.html" %}
 
 <!-- Page Header-->
-<header class="masthead" style="background-image: url('{{post.img_url}}')">
+<header class="blog-header" style="background-image: url('{{post.img_url}}')">
   <div class="container position-relative px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
-        <div class="post-heading">
+        <div class="blog-post-heading blog-fade-in">
           <h1>{{ post.title }}</h1>
           <h2 class="subheading">{{ post.subtitle }}</h2>
-          <span class="meta"
-            >Posted by
-            <a href="#">{{ post.author.name }}</a>
+          <span class="meta">
+            Posted by
+            <a href="#" class="text-white text-decoration-none fw-bold">{{ post.author.name }}</a>
             on {{ post.date }}
           </span>
         </div>
@@ -25,35 +26,49 @@
   <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
-        {{ post.body|safe }}
-        {% if current_user.id == 1: %}
-        <div class="d-flex justify-content-end mb-4">
-          <a
-            class="btn btn-primary float-right"
-            href="{{url_for('edit_post', post_id=post.id)}}"
-            >Edit Post</a
-          >
+        <!-- Blog content -->
+        <div class="blog-post-content blog-fade-in">
+          <div class="blog-content">
+            {{ post.body|safe }}
+          </div>
+          
+          {% if current_user.id == 1: %}
+          <div class="d-flex justify-content-end mt-4">
+            <a class="btn blog-btn blog-btn-primary" href="{{url_for('edit_post', post_id=post.id)}}">
+              <i class="fas fa-edit me-2"></i>Edit Post
+            </a>
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
 
         <!-- Comments Area -->
-        {{ckeditor.load()}}{{ckeditor.config(name='comment')}}
-        {{render_form(form , novalidate = True , button_map={"submit":"primary"})}}
-        <div class="comment">
-
-          {% for comment in post.comments: %}
-          <ul class="commentList">
-            <li>
-              <div class="commenterImage">
-                <img src="{{comment.comment_author.email | gravatar}}" />
+        <div class="blog-comments blog-fade-in">
+          <h3 class="blog-comments-heading">Comments</h3>
+          
+          <div class="blog-comment-form">
+            {{ckeditor.load()}}
+            {{ckeditor.config(name='comment')}}
+            {{render_form(form, novalidate=True, button_map={"submit":"blog-btn blog-btn-primary"})}}
+          </div>
+          
+          {% if post.comments|length > 0 %}
+            {% for comment in post.comments: %}
+            <div class="blog-comment">
+              <div class="blog-commenter-image">
+                <img src="{{comment.comment_author.email | gravatar}}" alt="{{comment.comment_author.name}}"/>
               </div>
-              <div class="commentText">
-                <p>{{comment.text|safe}}</p>
-                <span class="date sub-text">{{comment.comment_author.name}}</span>
+              <div class="blog-comment-text">
+                <p class="blog-comment-author">{{comment.comment_author.name}}</p>
+                <div>{{comment.text|safe}}</div>
+                <small class="blog-comment-date">{{comment.date.strftime('%B %d, %Y') if comment.date}}</small>
               </div>
-            </li>
-          </ul>
-          {% endfor %}
+            </div>
+            {% endfor %}
+          {% else %}
+            <div class="text-center py-3">
+              <p class="text-muted">Be the first to leave a comment!</p>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>

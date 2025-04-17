@@ -1,59 +1,57 @@
 {% include "header.html" %}
 
 <!-- Page Header-->
-<header
-  class="masthead"
-  style="background-image: url('../static/assets/img/home-bg.jpg')"
->
+<header class="blog-header" style="background-image: url('../static/assets/img/home.jpg')">
   <div class="container position-relative px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
-        <div class="site-heading">
-          <h1>[Your Name]'s Blog</h1>
-          <span class="subheading">A collection of random musings.</span>
+        <div class="blog-header-content blog-fade-in">
+          <h1 class="blog-title">[Your Name] Blog</h1>
+          <span class="blog-subtitle">A collection of random musings.</span>
         </div>
       </div>
     </div>
   </div>
 </header>
+
 <!-- Main Content-->
 <div class="container px-4 px-lg-5">
   <div class="row gx-4 gx-lg-5 justify-content-center">
     <div class="col-md-10 col-lg-8 col-xl-7">
       <!-- Post preview-->
       {% for post in all_posts %}
-      <div class="post-preview">
-        <a href="{{ url_for('show_post', post_id=post.id) }}">
-          <h2 class="post-title">{{ post.title }}</h2>
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+      <div class="blog-post blog-fade-in" style="animation-delay: {{ loop.index * 0.1 }}s">
+        <a href="{{ url_for('show_post', post_id=post.id) }}" class="blog-post-link">
+          <h2 class="blog-post-title">{{ post.title }}</h2>
+          <h3 class="blog-post-subtitle">{{ post.subtitle }}</h3>
         </a>
-        <p class="post-meta">
+        <p class="blog-post-meta">
           Posted by
           <a href="#">{{post.author.name}}</a>
           on {{post.date}}
           {% if current_user.id == 1: %}
-          <a href="{{url_for('delete_post', post_id=post.id) }}">✘</a>
+          <a href="{{url_for('delete_post', post_id=post.id) }}" class="blog-delete-btn">
+            <i class="fas fa-trash-alt ms-2"></i>
+          </a>
           {% endif %}
         </p>
       </div>
-      <!-- Divider-->
-      <hr class="my-4" />
       {% endfor %}
 
       <!-- New Post -->
       {% if current_user.id == 1: %}
       <div class="d-flex justify-content-end mb-4">
-        <a
-          class="btn btn-primary float-right"
-          href="{{url_for('add_new_post')}}"
-          >Create New Post</a
-        >
+        <a class="btn blog-btn blog-btn-primary" href="{{url_for('add_new_post')}}">
+          <i class="fas fa-pen me-2"></i>Create New Post
+        </a>
       </div>
       {% endif %}
 
       <!-- Pager-->
       <div class="d-flex justify-content-end mb-4">
-        <a class="btn btn-secondary text-uppercase" href="#!">Older Posts →</a>
+        <a class="btn blog-btn blog-btn-secondary" href="#!">
+          Older Posts <i class="fas fa-arrow-right ms-1"></i>
+        </a>
       </div>
     </div>
   </div>

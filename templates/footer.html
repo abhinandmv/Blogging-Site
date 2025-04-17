@@ -1,43 +1,37 @@
 <!-- Footer-->
-        <footer class="border-top">
-          <div class="container px-4 px-lg-5">
-              <div class="row gx-4 gx-lg-5 justify-content-center">
-                  <div class="col-md-10 col-lg-8 col-xl-7">
-                      <ul class="list-inline text-center">
-                          <li class="list-inline-item">
-                              <a href="https://x.com/abhinandmvp">
-                                  <span class="fa-stack fa-lg">
-                                      <i class="fas fa-circle fa-stack-2x"></i>
-                                      <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
-                                  </span>
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a href="https://www.linkedin.com/in/abhinand-mv/">
-                                  <span class="fa-stack fa-lg">
-                                      <i class="fas fa-circle fa-stack-2x"></i>
-                                      <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
-                                  </span>
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a href="https://github.com/abhinandmv">
-                                  <span class="fa-stack fa-lg">
-                                      <i class="fas fa-circle fa-stack-2x"></i>
-                                      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                  </span>
-                              </a>
-                          </li>
-                      </ul>
-                      <div class="small text-center text-muted fst-italic">Copyright &copy; Blog.com {{year}}</div>
-                  </div>
-              </div>
-          </div>
-      </footer>
-      <!-- Bootstrap core JS-->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
-      <!-- Core theme JS-->
-      <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-  </body>
+<footer class="blog-footer">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a href="https://x.com/abhinandmvp" class="blog-social-link">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/abhinand-mv/" class="blog-social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/abhinandmv" class="blog-social-link">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="text-center blog-copyright">Copyright &copy; Blog.com {{year}}</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/modern-scripts.js') }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    [...existing scroll code...]
+  });
+</script>
+</body>
 </html>

@@ -2,38 +2,89 @@
 
 <!-- Page Header-->
 <header
-  class="masthead"
-  style="background-image: url('../static/assets/img/about-bg.jpg')"
+  class="masthead blog-header"
+  style="background-image: url('../static/assets/img/about-page.jpg')"
 >
   <div class="container position-relative px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
-        <div class="page-heading">
-          <h1>About Me</h1>
-          <span class="subheading">This is what I do.</span>
+        <div class="page-heading blog-header-content">
+          <h1 class="blog-title">About Me</h1>
+          <span class="subheading blog-subtitle">This is what I do.</span>
         </div>
       </div>
     </div>
   </div>
 </header>
+
 <!-- Main Content-->
 <main class="mb-4">
   <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
-        <p>
+        <!-- Profile card -->
+        <div class="card shadow-sm mb-5 profile-card blog-fade-in">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="../static/assets/img/default-profile.jpg" alt="Profile Image" class="img-fluid profile-image">
+              </div>
+              <div class="col-md-8">
+                <h2 class="profile-name">Your Name</h2>
+                <p class="profile-title">Web Developer & Designer</p>
+                <hr class="cyan-divider">
+                <p>
+                  Welcome to my blog! I'm passionate about creating beautiful and functional web experiences.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills section -->
+        <h3 class="story-heading cyan-heading">My Expertise</h3>
+        <div class="row mb-5">
+          <div class="col-md-4 mb-3">
+            <div class="card h-100 border-0 shadow-sm expertise-card blog-fade-in">
+              <div class="card-body text-center">
+                <i class="fas fa-code fa-3x mb-3 expertise-icon cyan-icon"></i>
+                <h4 class="expertise-title">Web Development</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card h-100 border-0 shadow-sm expertise-card blog-fade-in">
+              <div class="card-body text-center">
+                <i class="fas fa-paint-brush fa-3x mb-3 expertise-icon cyan-icon"></i>
+                <h4 class="expertise-title">Design</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card h-100 border-0 shadow-sm expertise-card blog-fade-in">
+              <div class="card-body text-center">
+                <i class="fas fa-mobile-alt fa-3x mb-3 expertise-icon cyan-icon"></i>
+                <h4 class="expertise-title">Responsive</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About text -->
+        <h3 class="story-heading cyan-heading">My Story</h3>
+        <p class="story-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe
           nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis
           sit soluta odio, adipisci quas excepturi maxime quae totam ducimus
           consectetur?
         </p>
-        <p>
+        <p class="story-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
           praesentium recusandae illo eaque architecto error, repellendus iusto
           reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in
           officia voluptas voluptatibus, minus!
         </p>
-        <p>
+        <p class="story-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
           consequuntur magnam, excepturi aliquid ex itaque esse est vero natus
           quae optio aperiam soluta voluptatibus corporis atque iste neque sit
